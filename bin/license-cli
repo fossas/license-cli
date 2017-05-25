@@ -3,19 +3,38 @@
 var program = require('commander')
 var metadata = require('../package.json')
 var cmd = require('../lib/cmd.js')
+var ctx = require('../lib/ctx.js')
+var fs = require('fs')
+var path = require('path')
+
+var PROJECT_DEFAULT = ctx.getProject(process.cwd())
+var REVISION_DEFAULT = ctx.getRevision(process.cwd())
+var AUTH_DEFAULT = ctx.getAuth()
 
 program
   .version(metadata.version)
-  .option('-p, --project <id>', '(required) project id or locator to query')
-  .option('-r, --revision [id]', '(optional) revision id to query; defaults to latest')
-  .option('-b, --branch [branch]', '(optional) branch to default to if no revision is specified')
-  .option('-t, --token [token]', '(optional) api token for accessing private projects')
-  .option('-o, --timeout [ms]', '(optional) timeout for waiting on build status; defaults to 30m', parseFloat, 1000 * 60 * 30)
-  .option('-e, --endpoint [url]', '(optional) custom fossa instance url', 'https://app.fossa.io/')
 
 program
   .command('scan')
   .description('output FOSSA license scan status for a given project or revision')
+  .option('-p, --project [id]', 'project id or locator to query, defaults to git details of cwd', PROJECT_DEFAULT)
+  .option('-r, --revision [id]', 'revision id to query; defaults to git details of cwd then latest', REVISION_DEFAULT)
+  .option('-b, --branch [branch]', 'branch to default to if no revision is specified')
+  .option('-t, --token [token]', 'api token for accessing private projects', AUTH_DEFAULT)
+  .option('-o, --timeout [ms]', 'timeout for waiting on build status; defaults to 30m', parseFloat, 1000 * 60 * 30)
+  .option('-e, --endpoint [url]', 'custom fossa instance url', 'https://app.fossa.io/')
   .action(cmd.scan)
+
+program
+  .command('auth <token>')
+  .description('set the current auth token from Account Settings > Integrations > Tokens')
+  .action(function (token) {
+    try {
+      fs.writeFileSync(path.resolve(__dirname, '../.token'), token)
+      console.log('Config written')
+    } catch (err) {
+      console.error('Unable to write token config: ' + err.message)
+    }
+  })
 
 program.parse(process.argv)
