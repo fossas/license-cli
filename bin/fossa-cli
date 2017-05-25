@@ -10,20 +10,12 @@ program
   .option('-r, --revision [id]', '(optional) revision id to query; defaults to latest')
   .option('-b, --branch [branch]', '(optional) branch to default to if no revision is specified')
   .option('-t, --token [token]', '(optional) api token for accessing private projects')
+  .option('-o, --timeout [ms]', '(optional) timeout for waiting on build status; defaults to 30m', parseFloat, 1000 * 60 * 30)
   .option('-e, --endpoint [url]', '(optional) custom fossa instance url', 'https://app.fossa.io/')
 
 program
-  .command('issues')
-  .description('output issue status for a given project or revision')
-  .action(cmd.issues)
-
-program
-  .command('build')
-  .description('queue a build for a given project')
-  .action(cmd.build)
-
-program
-  .command('run', 'queue a fossa build/scan and output errors if issues are found')
-  .action(cmd.run)
+  .command('scan')
+  .description('output FOSSA license scan status for a given project or revision')
+  .action(cmd.scan)
 
 program.parse(process.argv)
