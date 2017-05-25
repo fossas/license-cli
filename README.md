@@ -3,7 +3,6 @@
 A CLI for running license and compliance scans across your dependencies, powered by http://fossa.io for your termainal or CI.
 
 [![asciicast](https://asciinema.org/a/9uqxkbggyo7z3nmam51ramzmp.png)](https://asciinema.org/a/9uqxkbggyo7z3nmam51ramzmp?t=0:06)
-^ Click the image for a recorded demo!
 
 ## Installation
 TBA

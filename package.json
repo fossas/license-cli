@@ -2,7 +2,7 @@
   "name": "license-cli",
   "version": "1.0.0",
   "description": "CLI for running license & compliance scans across your dependencies; powered by http://fossa.io for your terminal or CI",
-  "main": "bin/fossa-cli",
+  "main": "bin/license-cli",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
