@@ -5,7 +5,9 @@ A CLI for running license and compliance scans across your dependencies, powered
 [![asciicast](https://asciinema.org/a/9uqxkbggyo7z3nmam51ramzmp.png)](https://asciinema.org/a/9uqxkbggyo7z3nmam51ramzmp?t=0:06)
 
 ## Installation
-TBA
+
+  1. Run `npm install -g license-cli` (requires nodejs and npm on your machine) 
+	2. **Get an API key from FOSSA** - Register an account at [http://fossa.io](http://fossa.io) if you have not already and then navigate to **Account Settings > Integrations > API Tokens > Create Token**
 
 ## Usage
 
