@@ -37,7 +37,7 @@ A CLI for running license and compliance scans across your dependencies, powered
 
 `license-cli` was made to work great with CI systems.  The `scan` command writes scan summaries to `stderr` and `stdout` and uses common exit codes, so you can rely on the output to work out of the box with CI tasks.
 
-If you a popular CI provider, the FOSSA team already has some pre-written for tasks and plugins:
+If you use a popular CI provider, the FOSSA team already has some pre-written for tasks and plugins:
 
  - [TravisCI - https://github.com/fossas/fossa-travisci-plugin](https://github.com/fossas/fossa-travisci-plugin)
  - [CircleCI - https://github.com/fossas/fossa-circleci-plugin](https://github.com/fossas/fossa-circleci-plugin)
