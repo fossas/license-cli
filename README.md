@@ -49,8 +49,8 @@ Note - license-cli is a client for data from [https://app.fossa.io] and will not
 
 If you use a popular CI provider, the FOSSA team already has some pre-written for tasks and plugins:
 
- - [TravisCI - https://github.com/fossas/fossa-travisci-plugin](https://github.com/fossas/fossa-travisci-plugin)
- - [CircleCI - https://github.com/fossas/fossa-circleci-plugin](https://github.com/fossas/fossa-circleci-plugin)
+ - [TravisCI - http://fossa.io/docs/integrating-tools/travisci](http://fossa.io/docs/integrating-tools/travisci)
+ - [CircleCI - http://fossa.io/docs/integrating-tools/circleci](http://fossa.io/docs/integrating-tools/circleci)
  - [Jenkins - https://github.com/fossas/fossa-jenkins-plugin](https://github.com/fossas/fossa-jenkins-plugin)
 
 ## License 
