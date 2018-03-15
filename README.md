@@ -1,3 +1,5 @@
+**DEPRECATED:** This repo has been superceded by [fossa-cli](https://github.com/fossas/fossa-cli).
+
 # License CLI
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Ffossas%2Flicense-cli.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Ffossas%2Flicense-cli?ref=badge_shield)
